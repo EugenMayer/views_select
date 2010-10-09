@@ -1,0 +1,5 @@
+; $Id: project_api.info,v 1.1.2.2 2010/10/06 11:29:22 rareface Exp $
+name = "Views select plugin"
+core = "6.x"
+package = "Views"
+dependencies[]=views

@@ -1,0 +1,25 @@
+<?php
+
+function views_select_views_plugins() {
+  return array(
+    'style' => array(
+      'views_select' => array(
+        'title' => t('Table select'),
+        'help' => t('Views'),
+        'handler' => 'view_select_plugin_style_views_select',
+        'parent' => 'table',
+        'theme' => 'views_view_table',
+        'uses row plugin' => FALSE,
+        'uses fields' => TRUE,
+        'uses options' => TRUE,
+        'type' => 'normal',
+        'help topic' => 'style-table',
+        'theme path' => drupal_get_path('module', 'views') .'/theme'
+      ),
+    ),
+  );
+}
+
+function views_select_preprocess_views_view_table(&$vars) {
+  dsm($vars);
+}
