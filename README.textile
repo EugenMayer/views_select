@@ -1,0 +1,22 @@
+h1. Purpose
+
+Ever wondered how to utilize views easily in e.g. a dialog to let the use select a row out of a complex view with filters and all that?
+Well think about just using a table style which lets you set a Javascript callback and let you select a column of the fields as the value.
+
+When the user clicks a row, your callback gets called and the first parameter will be the value, the second the row itself (for whatever you want to do with it).
+Thats it!
+
+h1. Installation
+
+# Activate the module
+# Clear the cache. thats it!
+
+h1. Usage
+
+# Create a view.
+# Select "Table select" as style plugin
+# Go to the options form and set the usual table things like order etc. and 
+## Set the callback. This javascript method will be called, if a row gets selected
+## select a column out of the current fields, which will be passed as value
+
+Your done, thats it :)
