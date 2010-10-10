@@ -21,5 +21,25 @@ function views_select_views_plugins() {
 }
 
 function views_select_preprocess_views_view_table(&$vars) {
-  dsm($vars);
+  $m = drupal_get_path('module','views_select');
+  drupal_add_js("$m/js/table_select.js");
+  drupal_add_js("$m/js/views_select.js");
+  drupal_add_css("$m/css/views_select.css");
+  $view = $vars['view'];
+  
+  $settings = array();
+  $settings['view_name'] = $view->name;
+  $settings['table_sel'] = ".view-{$settings['view_name']} table.views-table";
+  $col = str_replace('_','-',$vars['options']['value_col']);
+  $settings['value_col_sel'] = "td.views-field-$col";
+  $settings['callback'] = "{$vars['options']['jscallback']}";
+  
+  drupal_add_js(
+    array(
+      'views_select' => array(
+        $settings['view_name'] => $settings,
+      ),
+    ),
+    'setting'
+  );
 }
