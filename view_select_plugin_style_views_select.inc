@@ -1,5 +1,8 @@
 <?php
+// $Id$
 
+// Copyright (c) 2010 KontextWork
+// Author: Eugen Mayer
 class view_select_plugin_style_views_select extends views_plugin_style_table {
   function option_definition() {
     $options = parent::option_definition();

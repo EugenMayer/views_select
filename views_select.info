@@ -1,5 +1,6 @@
-; $Id: project_api.info,v 1.1.2.2 2010/10/06 11:29:22 rareface Exp $
+; $Id
 name = "Views select plugin"
+description = "A new views style plugin for utilizing a view as a selection form with a js callback"
 core = "6.x"
 package = "Views"
 dependencies[]=views

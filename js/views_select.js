@@ -1,3 +1,8 @@
+// $Id$
+
+// Copyright (c) 2010 KontextWork
+// Author: Eugen Mayer
+
 Drupal.behaviors.views_select = function (context) {
   var settings =  Drupal.settings.views_select;
   $.each(

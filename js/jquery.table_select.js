@@ -1,3 +1,8 @@
+// $Id$
+
+// Copyright (c) 2010 KontextWork
+// Author: Eugen Mayer
+
 (function($) {
   $.fn.table_select = function(options) {
     return this.each( function(){
