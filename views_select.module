@@ -33,7 +33,7 @@ function views_select_preprocess_views_view_table(&$vars) {
   
   $settings = array();
   $settings['view_name'] = $view->name;
-  $settings['table_sel'] = ".view-{$settings['view_name']} table.views-table";
+  $settings['table_sel'] = ".view-id-{$settings['view_name']} table.views-table";
   $col = str_replace('_','-',$vars['options']['value_col']);
   $settings['value_col_sel'] = "td.views-field-$col";
   $settings['callback'] = "{$vars['options']['jscallback']}";
