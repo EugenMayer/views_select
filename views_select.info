@@ -4,3 +4,5 @@ description = "A new views style plugin for utilizing a view as a selection form
 core = "6.x"
 package = "Views"
 dependencies[]=views
+l10n url=http://localize.maintain.kontextwork.de/sites/default/files/translations/l10n_server.xml
+l10n server=localize.maintain.kontextwork.de
