@@ -30,4 +30,29 @@ class view_select_plugin_style_views_select extends views_plugin_style_table {
       '#description' => t('Select the column which will be submitted as value (first argument) to the js callback function'),
     );
   }
+
+  function render() {
+    $m = drupal_get_path('module','views_select');
+    drupal_add_js("$m/js/jquery.table_select.js");
+    drupal_add_js("$m/js/views_select.js");
+    drupal_add_css("$m/css/views_select.css");
+
+
+    $settings = array();
+    $settings['view_name'] = $this->view->name;
+    $settings['table_sel'] = ".view-id-{$settings['view_name']} table.views-table";
+    $col = str_replace('_','-',$this->options['value_col']);
+    $settings['value_col_sel'] = "td.views-field-$col";
+    $settings['callback'] = "{$this->options['jscallback']}";
+
+    drupal_add_js(
+      array(
+        'views_select' => array(
+          $settings['view_name'] => $settings,
+        ),
+      ),
+      'setting'
+    );
+    return parent::render();
+  }
 }
